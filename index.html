@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinHub · Seu painel financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. BARRA DE NAVEGAÇÃO -->
+  <header class="nav">
+    <a class="logo" href="#">💹 Fin<span>Hub</span></a>
+    <nav>
+      <a href="#">Início</a><a href="#">Mercados</a><a href="#">Conversor</a><a href="#">Notícias</a><a href="#">Contato</a>
+    </nav>
+    <div class="acoes">
+      <button class="btn-outline">Entrar</button>
+      <button class="btn-solid">Cadastrar</button>
+    </div>
+  </header>
+
+  <!-- 2. HERO (parte principal) -->
+  <main class="hero">
+    <div class="arco"></div>
+
+    <div class="prova">
+      <div class="avatares"><span>🧑🏽</span><span>👩🏻</span><span>🧔🏼</span><span>👨🏿</span></div>
+      <p>Mais de 1,2 mil investidores já acompanham</p>
+    </div>
+
+    <h1>ACOMPANHE, <em>ENTENDA &amp;</em><br><em>CRESÇA</em> COM O MERCADO</h1>
+    <p class="sub">Cotações, notícias e ferramentas financeiras em um só lugar.<br>Simplifique sua rotina e invista com mais clareza.</p>
+
+    <!-- 3. CARTÕES -->
+    <section class="cards">
+
+      <!-- Cartão esquerdo -->
+      <article class="card lado esq">
+        <button class="seta">↗</button>
+        <p class="mini">Ibovespa</p>
+        <p class="mini">131.200 pts</p>
+        <strong class="pct">↗ 0,64%</strong>
+        <div class="colunas">
+          <i style="--h:40%"></i><i style="--h:80%"></i><i style="--h:50%"></i>
+          <i class="ativa" style="--h:75%"><b>R$ 5,42</b></i><i style="--h:35%"></i><i style="--h:55%"></i>
+        </div>
+      </article>
+
+      <!-- Cartão central -->
+      <article class="card centro">
+        <div class="topo"><h2>▭ Dólar hoje</h2><button class="seta">↗</button></div>
+        <p class="mini">Cotação do dólar em reais</p>
+        <div class="linha">
+          <div><strong id="valor">R$ 5,42</strong><span class="badge" id="badge">+0,02</span></div>
+          <span class="pct" id="variacao">↗ 2,03%</span>
+        </div>
+        <div class="barras" id="grafico-barras"><i style="--h:30%"></i><i style="--h:55%"></i><i style="--h:75%"></i><i style="--h:90%"></i><i style="--h:40%"></i><i style="--h:25%"></i><i style="--h:35%"></i><i style="--h:60%"></i><i style="--h:45%"></i><i style="--h:30%"></i><i style="--h:70%"></i><i style="--h:85%"></i><i style="--h:95%"></i><i style="--h:50%"></i><i style="--h:35%"></i><i style="--h:60%"></i><i style="--h:80%"></i><i style="--h:65%"></i><i style="--h:40%"></i><i style="--h:30%"></i><i class="claro" style="--h:55%"></i><i class="claro" style="--h:75%"></i><i class="claro" style="--h:45%"></i><i class="claro" style="--h:25%"></i><i class="claro" style="--h:40%"></i><i class="claro" style="--h:60%"></i><i class="claro" style="--h:35%"></i><i class="claro" style="--h:50%"></i></div>
+        <div class="eixo"><span>Seg</span><span>Dom</span></div>
+        <div class="progresso" id="barra-progresso"><span style="width:83%"></span></div>
+        <ul class="legenda">
+          <li><i class="verde"></i>Alta - 83%</li>
+          <li><i class="claro"></i>Queda - 17%</li>
+        </ul>
+      </article>
+
+      <!-- Cartão direito -->
+      <article class="card lado dir">
+        <h2>▮▮▮ Dólar no ano</h2>
+        <div class="abas" id="abas">
+          <button class="on">2026</button><button>2025</button><button>2024</button><button>2023</button>
+        </div>
+        <div class="area">
+          <ul class="y"><li>6,0</li><li>5,5</li><li>5,0</li><li>4,5</li><li>4,0</li></ul>
+          <svg viewBox="0 0 300 120" preserveAspectRatio="none" id="area-chart">
+            <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fb866" stop-opacity=".6"/><stop offset="1" stop-color="#3fb866" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0 70 C30 10 50 60 80 40 S130 75 160 35 S220 30 250 20 S290 50 300 25 V120 H0Z" fill="url(#g)"/>
+            <path d="M0 70 C30 10 50 60 80 40 S130 75 160 35 S220 30 250 20 S290 50 300 25" fill="none" stroke="#3fb866" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="meses"><span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span></div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

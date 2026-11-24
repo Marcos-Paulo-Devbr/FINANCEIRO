@@ -1,0 +1,75 @@
+/* ========== 1. BASE E CORES ========== */
+:root{--verde:#3fb866;--verde-esc:#1c6b3a;--claro:#bfeccf;--ouro:#d4a017;--texto:#f2f5f3;--mudo:#9db3a5;--card:#07110b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:#000;color:var(--texto);min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0}
+
+/* ========== 2. NAVBAR ========== */
+.nav{position:relative;z-index:5;max-width:1200px;margin:20px auto 0;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.05);border-radius:18px}
+.logo{font-weight:800;font-size:1.5rem}.logo span{color:var(--verde)}
+.nav nav{display:flex;gap:34px}
+.acoes{display:flex;gap:10px}
+.btn-outline{background:transparent;color:var(--verde);border:1px solid var(--verde);padding:9px 18px;border-radius:8px}
+.btn-solid{background:var(--verde);color:#02130a;font-weight:600;padding:9px 18px;border-radius:8px}
+
+/* ========== 3. HERO E ARCO BRILHANTE ========== */
+.hero{position:relative;overflow:hidden;text-align:center;padding:120px 16px 60px;margin-top:-70px}
+.arco{position:absolute;top:60px;left:50%;width:1150px;height:1150px;translate:-50% 0;border-radius:50%;border-top:2px solid #8dffb0;background:radial-gradient(circle at 50% 0,rgba(63,184,102,.22),transparent 55%);box-shadow:0 -12px 70px rgba(63,184,102,.55)}
+.hero>*:not(.arco){position:relative}
+.prova{display:inline-flex;align-items:center;gap:12px;margin-top:40px}
+.avatares{display:flex}
+.avatares span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#e8a24a;border:2px solid #000;margin-left:-8px}
+.avatares span:first-child{margin-left:0}
+.prova p{font-size:.95rem}
+h1{font-size:clamp(2rem,5.5vw,4rem);line-height:1.12;margin:22px auto 20px;max-width:850px;font-weight:800}
+h1 em{font-style:normal;color:var(--verde)}
+.sub{color:#d6e2da;line-height:1.6}
+
+/* ========== 4. CARTÕES EM PERSPECTIVA ========== */
+.cards{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:26px;max-width:1200px;margin:50px auto 0;perspective:1400px;align-items:end;text-align:left}
+.card{background:linear-gradient(160deg,#0b1d12,var(--card));border:1px solid var(--verde-esc);border-radius:26px;padding:22px}
+.lado{opacity:.65}
+.esq{transform:rotateY(28deg);transform-origin:right center}
+.dir{transform:rotateY(-28deg);transform-origin:left center}
+.card h2{font-size:1.25rem;font-weight:500}
+.topo,.linha{display:flex;justify-content:space-between;align-items:center}
+.seta{width:46px;height:46px;border-radius:50%;background:var(--ouro);color:#fff;font-size:1.1rem}
+.mini{color:var(--mudo);font-size:.9rem;margin-top:6px}
+.linha{margin:6px 0 18px}
+#valor{font-size:2rem;font-weight:600}
+.badge{background:var(--verde);color:#02130a;font-size:.7rem;font-weight:700;padding:2px 7px;border-radius:99px;margin-left:6px}
+.pct{font-size:1.3rem;font-weight:500}
+
+/* barras do cartão central */
+.barras{display:flex;align-items:flex-end;gap:4px;height:170px}
+.barras i{flex:1;height:var(--h);background:var(--verde);border-radius:4px}
+.barras i.claro{background:var(--claro)}
+.eixo{display:flex;justify-content:space-between;color:var(--mudo);font-size:.75rem;margin:6px 0 14px}
+.progresso{height:14px;border-radius:99px;background:var(--claro);overflow:hidden}
+.progresso span{display:block;height:100%;background:var(--verde)}
+.legenda{list-style:none;display:flex;gap:22px;margin-top:14px;font-size:.95rem}
+.legenda i{display:inline-block;width:16px;height:16px;border-radius:4px;margin-right:8px;vertical-align:-3px;background:var(--verde)}
+.legenda i.claro{background:var(--claro)}
+
+/* cartão esquerdo */
+.colunas{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:20px}
+.colunas i{position:relative;flex:1;height:var(--h);background:linear-gradient(#bbb,#777);border-radius:10px}
+.colunas i.ativa{background:var(--verde)}
+.colunas b{position:absolute;top:-30px;left:50%;translate:-50% 0;background:#222;font-size:.7rem;padding:3px 6px;border-radius:6px;white-space:nowrap}
+
+/* cartão direito */
+.abas{display:flex;gap:8px;margin:14px 0}
+.abas button{background:transparent;color:var(--mudo);border:1px solid var(--verde-esc);padding:6px 14px;border-radius:99px}
+.abas button.on{background:var(--verde);color:#02130a;font-weight:600}
+.area{display:flex;gap:10px;height:150px}
+.y{list-style:none;display:flex;flex-direction:column;justify-content:space-between;color:var(--mudo);font-size:.75rem}
+.area svg{flex:1;height:100%}
+.meses{display:flex;justify-content:space-between;color:var(--mudo);font-size:.75rem;margin:6px 0 0 30px}
+
+/* ========== 5. RESPONSIVO ========== */
+@media(max-width:900px){
+  .nav nav{display:none}
+  .cards{grid-template-columns:1fr}
+  .lado{transform:none;opacity:1}
+}
